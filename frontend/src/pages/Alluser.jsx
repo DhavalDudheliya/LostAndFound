@@ -22,6 +22,7 @@ function AllUser() {
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false); // For set dialoge Box
   const [deleteUser, setDeleteUser] = useState(false); // For set delete user which one is clicked
+  const [count, setCount] = useState(0);
 
   // When user click on updatestatus
   const handleClickOpen = () => {
@@ -50,7 +51,7 @@ function AllUser() {
       .then((res) => {
         setStudent(res.data.student);
       });
-  }, []);
+  }, [count]);
 
   const HandleCoordinatorDelete = async (user) => {
     await axios
@@ -73,7 +74,7 @@ function AllUser() {
         window.location.reload("admin/dashboard");
       })
       .catch((err) => {
-        window.location.reload("admin/dashboard");
+        // window.location.reload("admin/dashboard");
       });
   };
 
