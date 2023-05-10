@@ -191,7 +191,7 @@ const getMyListing = async (req, res) => {
     // Find their own listed items
     const items = await Items.find({
       ItemType: "Found",
-      status: "Not found",
+      status: "Not claimed",
       listedBy: coordinator.userName,
     });
 
@@ -216,7 +216,7 @@ const getMyLitingBySearch = async (req, res) => {
     const query = req.query.q; // Get query from frontend
     const items = await Items.find({
       ItemType: "Found",
-      status: "Not found",
+      status: "Not claimed",
       listedBy: coordinator.userName,
 
       // Search any Word
