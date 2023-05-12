@@ -201,7 +201,7 @@ function ClaimedItemsAdmin() {
                             </td>
                             <td className="py-3 px-6 text-center">
                               <div className="font-normal">
-                                {itemData.ListedAt}
+                                {moment(itemData.ListedAt).format("DD-MM-YYYY")}
                               </div>
                             </td>
                             <td className="py-3 px-6 text-center">

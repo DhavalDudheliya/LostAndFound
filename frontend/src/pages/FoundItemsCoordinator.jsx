@@ -31,7 +31,7 @@ function FoundItemsCoordinator() {
   const [showClearIcon, setShowClearIcon] = useState("none"); // For clear searchFeild
   const [loading, setLoading] = useState(true); // For loading
   const [open, setOpen] = useState(false); // For set dialoge Box
-  const [deleteItem, setDeleteItem] = useState(false); // For set delete item which one is clicked
+  const [UpdateStatusItem, setUpdateStatusItem] = useState(false); // For set delete item which one is clicked
 
   // When user click on updatestatus
   const handleClickOpen = () => {
@@ -265,7 +265,7 @@ function FoundItemsCoordinator() {
                                         className="warn_text-2"
                                         style={{ color: "red" }}
                                       >
-                                        {deleteItem.itemName}
+                                        {UpdateStatusItem.itemName}
                                       </p>{" "}
                                       ?
                                     </div>
@@ -282,7 +282,7 @@ function FoundItemsCoordinator() {
                                       <p
                                         className="yes_btn"
                                         onClick={() => {
-                                          HandleUpdate(deleteItem);
+                                          HandleUpdate(UpdateStatusItem);
                                         }}
                                       >
                                         Yes
@@ -297,7 +297,7 @@ function FoundItemsCoordinator() {
                                   className="table-icons transform hover:scale-110"
                                   style={{ cursor: "pointer" }}
                                   onClick={() => {
-                                    setDeleteItem(itemData);
+                                    setUpdateStatusItem(itemData);
                                     handleClickOpen();
                                   }}
                                 ></GrUpdate>

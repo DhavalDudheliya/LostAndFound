@@ -93,6 +93,7 @@ code {
   display: flex;
   justify-content: space-between;
   padding: 30px 100px 30px 30px;
+  margin-top: 50px;
   align-items: center;
   font-family: 'Akshar', sans-serif;
   

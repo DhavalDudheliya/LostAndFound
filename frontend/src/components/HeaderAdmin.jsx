@@ -16,7 +16,6 @@ function Header() {
       .then((response) => navigate("/admin/login"));
   };
 
-
   return (
     <div className="main-header">
       <header className="header">

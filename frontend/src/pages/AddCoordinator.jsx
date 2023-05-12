@@ -20,9 +20,10 @@ function AddCoordinator() {
   // const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/admin/getdept")
-      .then((response) => setAll(response.data.depts), setLoading(false));
+    axios.get("http://localhost:8000/admin/getdept").then((response) => {
+      setAll(response.data.depts);
+      setLoading(false);
+    });
   });
 
   const handleSubmit = async (event, response) => {

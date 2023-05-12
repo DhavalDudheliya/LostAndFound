@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { ColorRing } from "react-loader-spinner";
+const moment = require("moment");
 
 function MyListingCoordinator() {
   // const navigate = useNavigate();
@@ -191,7 +192,7 @@ function MyListingCoordinator() {
                             </td>
                             <td className="py-3 px-6 text-center">
                               <div className="font-normal">
-                                {itemData.ListedAt}
+                                {moment(itemData.ListedAt).format("DD-MM-YYYY")}
                               </div>
                             </td>
                             <td className="py-3 px-6 text-center">

@@ -21,7 +21,8 @@ function AllUser() {
   const [student, setStudent] = useState([]);
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false); // For set dialoge Box
-  const [deleteUser, setDeleteUser] = useState(false); // For set delete user which one is clicked
+  const [deleteUser, setDeleteUser] = useState(""); // For set delete user which one is clicked
+  const [deleteCoo, setDeleteCoo] = useState(""); // For set delete user which one is clicked
   const [count, setCount] = useState(0);
 
   // When user click on updatestatus
@@ -62,7 +63,7 @@ function AllUser() {
         window.location.reload("admin/dashboard");
       })
       .catch((err) => {
-        window.location.reload("admin/dashboard");
+        // window.location.reload("admin/dashboard");
       });
   };
   const HandleStudentDelete = async (user) => {
@@ -74,7 +75,7 @@ function AllUser() {
         window.location.reload("admin/dashboard");
       })
       .catch((err) => {
-        // window.location.reload("admin/dashboard");
+        window.location.reload("admin/dashboard");
       });
   };
 
@@ -163,7 +164,7 @@ function AllUser() {
                                     <p
                                       className="yes_btn"
                                       onClick={() => {
-                                        HandleCoordinatorDelete(deleteUser);
+                                        HandleCoordinatorDelete(deleteCoo);
                                       }}
                                     >
                                       Yes
@@ -182,7 +183,7 @@ function AllUser() {
                               <div
                                 className="transform hover:text-red-500 hover:scale-110 font-normal"
                                 onClick={() => {
-                                  setDeleteUser(coordinator);
+                                  setDeleteCoo(coordinator);
                                   handleClickOpen();
                                 }}
                               >

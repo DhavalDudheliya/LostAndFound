@@ -26,6 +26,16 @@ function CoordinatorDashboard() {
   const [mylisting, setmylisting] = useState(false);
 
   const navigate = useNavigate();
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("picture", selectedFile);
+
+    await axios.post("/api/upload-profile-picture", formData);
+  };
 
   useEffect(() => {
     axios
@@ -65,6 +75,13 @@ function CoordinatorDashboard() {
                     />
                     <div className="user-name">{userName}</div>
                   </div>
+                  {/* <div>
+                    <img src={currentPictureUrl} alt="Profile" />
+                    <input type="file" onChange={handleFileUpload} />
+                    <button onClick={handleUploadButtonClick}>
+                      Update Profile Picture
+                    </button>
+                  </div> */}
                   <div className="nav-menu">
                     <ul className="nav-menu-items ">
                       <li className="nav-text">
