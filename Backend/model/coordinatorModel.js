@@ -15,6 +15,10 @@ const CoordinatorSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a first name"],
     },
+    profilePicture: {
+      type: String,
+      default: "default-profile-picture.png",
+    },
     email: {
       type: String,
       required: [true, "Please add a email"],
